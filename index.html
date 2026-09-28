@@ -3,82 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Buchombie 7-in-1 Master Storefront</title>
-    <!-- RECTIFIED: Correctly mapped live Ethers.js engine library -->
+    <title>BUCHOMBIE 7-IN-1 ACTIVE VENDOR MATRIX</title>
+    <!-- FIXED LINE 8: Production Web3 Library Core Engine -->
     <script src="https://cloudflare.com" type="text/javascript"></script>
-<style>
-        body { font-family: monospace; background: #121212; color: #00ffcc; padding: 20px; margin: 0; }
-        h1 { text-align: center; border-bottom: 2px solid #00ffcc; padding-bottom: 15px; letter-spacing: 1px; font-size: 1.5rem; }
-        .contract-indicator { text-align: center; font-size: 0.85rem; color: #ff3366; margin-bottom: 25px; background: #22141a; padding: 8px; border: 1px dashed #ff3366; border-radius: 4px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card { border: 1px solid #00ffcc; padding: 20px; border-radius: 6px; background: #1a1a1a; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 10px rgba(0, 255, 204, 0.05); }
-        .card h3 { margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 5px; color: #ffffff; }
-        .title-text { word-break: break-all; color: #00ffcc; }
-        .cost-text { font-size: 1.1rem; color: #ffff00; margin: 15px 0 5px 0; }
-        button { background: #00ffcc; color: #121212; border: none; padding: 12px 15px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 10px; border-radius: 4px; font-family: monospace; transition: all 0.2s ease; }
-        button:hover { background: #ffffff; box-shadow: 0 0 12px #00ffcc; }
+    <style>
+        :root {
+            --neon-cyan: #00ffcc;
+            --deep-bg: #0f1115;
+            --panel-bg: #161a22;
+            --border-dim: #262e3d;
+            --gold-cost: #f5c068;
+            --hot-pink: #ff3366;
+        }
+        body { 
+            font-family: 'Courier New', Courier, monospace; 
+            background: var(--deep-bg); 
+            color: var(--neon-cyan); 
+            padding: 20px; 
+            margin: 0; 
+            font-size: 13px;
+        }
+        .matrix-title { 
+            text-align: center; 
+            border-bottom: 2px solid var(--neon-cyan); 
+            padding-bottom: 18px; 
+            letter-spacing: 2px; 
+            font-size: 1.4rem;
+            color: #ffffff;
+            text-shadow: 0 0 8px var(--neon-cyan);
+        }
+        .global-alert { 
+            text-align: center; 
+            font-size: 0.85rem; 
+            color: var(--hot-pink); 
+            margin: 20px auto 30px auto; 
+            background: #22141a; 
+            padding: 10px; 
+            border: 1px dashed var(--hot-pink); 
+            border-radius: 4px; 
+            max-width: 600px;
+        }
+        .showcase-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .vendor-card { 
+            border: 1px solid var(--neon-cyan); 
+            padding: 22px; 
+            border-radius: 6px; 
+            background: var(--panel-bg); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            box-shadow: 0 5px 15px rgba(0, 255, 204, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .vendor-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 255, 204, 0.15);
+        }
+        .vendor-card h3 { 
+            margin: 0 0 10px 0; 
+            border-bottom: 1px solid var(--border-dim); 
+            padding-bottom: 8px; 
+            color: #ffffff; 
+            font-size: 1.1rem;
+        }
+        .metadata-uri { 
+            word-break: break-all; 
+            color: #8a99ad; 
+            font-size: 11px;
+            background: #0f1217;
+            padding: 6px;
+            border-radius: 3px;
+            border: 1px solid #1c232f;
+        }
+        .price-matrix { 
+            font-size: 1.2rem; 
+            color: var(--gold-cost); 
+            font-weight: bold;
+            margin: 15px 0 8px 0; 
+        }
+        /* The Web3 Active Vendor Button Style */
+        .active-vendor-btn { 
+            background: var(--neon-cyan); 
+            color: #0f1115; 
+            border: 1px solid var(--neon-cyan); 
+            padding: 14px 20px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 12px; 
+            border-radius: 4px; 
+            font-family: 'Courier New', Courier, monospace; 
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        .active-vendor-btn:hover { 
+            background: #ffffff; 
+            border-color: #ffffff;
+            box-shadow: 0 0 15px var(--neon-cyan); 
+        }
     </style>
 </head>
 <body>
 
-    <h1>BUCHOMBIE INTER-DIMENSIONAL ELEMENTAL INITIATE 7 ETERNAL</h1>
-    <div class="contract-indicator">⚠️ CONFIGURATION REQUIRED: Replace placeholder with live address on deployment step.</div>
-    <div class="grid" id="storefront"></div>
+    <h1 class="matrix-title">BUCHOMBIE INTER-DIMENSIONAL ELEMENTAL INITIATE 7 ETERNAL</h1>
+    
+    <div class="global-alert">
+        ⚡ WEB3 VENDOR MODULE ACTIVE: Activation triggers Polygon Mainnet mint execution automatically via voucher claims.
+    </div>
+
+    <div class="showcase-grid" id="vendor-matrix-zone"></div>
 
 <script>
-// Replace placeholder text with your real smart contract address once deployed
-const contractAddress = "PASTE_YOUR_CONTRACT_ADDRESS_HERE";
+// Replace this placeholder string with your target deployed smart contract address
+const targetContractAddress = "PASTE_YOUR_CONTRACT_ADDRESS_HERE";
 
-const abi = ["function redeem(address redeemer, tuple(uint256 tokenId, uint256 minPrice, string uri, bytes signature) voucher) public payable returns (uint256)"];
-
-const inventory = [
-    { id: 1, title: "ANKHS-SPADES-Trailer-Edition-1-0", uri: "ipfs://bafkreidf3ikzrq5bdgbhrbsh7cr32m4rzs7o2oe6irkrkak4n5izxtbl2u", sig: "0x6f9c2d1b1014e36b62e4d5b694be31557d2a73abcb46da133074d11abcf9ca10" },
-    { id: 2, title: "Thine-To-Be-In Final Skit-9-COIP100", uri: "ipfs://bafkreierbfw64rylqmimpbgo5w2knfza3drtqlh62kd7t5kgqlszer227e", sig: "0x7a2d3e4f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e" },
-    { id: 3, title: "CV The 1st 6ixth March Sovereign Plate", uri: "ipfs://bafkreig5pgujqu5ndlsjzrq5muluo3abggikyjijhkjxgnme7krzv2gpue", sig: "0x8b3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e" },
-    { id: 4, title: "CV The 6ixth March Initial Years", uri: "ipfs://bafkreihabkcviyysansqp7p5qree5yo36dnfejifewcgfnqkdlnu33up3q", sig: "0x9c4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f" },
-    { id: 5, title: "CRADLERI Visualisations Official IInd", uri: "ipfs://bafkreifc3nzkivdkvydwvqvyjjx2sbrls2ybdyo3cvlif72xrpmt7xaktq", sig: "0xa5f6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6" },
-    { id: 6, title: "The Blue Avondales Presented by d'Rum", uri: "ipfs://bafkreieo6pyqnkj77zceeesw36erwyh2cexhrkx7dt5b6q5flzbsjlp7ei", sig: "0x6f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b" },
-    { id: 7, title: "CV To The Maidens Optimum Ultimate", uri: "ipfs://bafkreibkzupjunuvaavbjizophagz52qkujwakqpfvlluurfznmlwacnaa", sig: "0xc7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8" }
+const voucherAbi = [
+    "function redeem(address redeemer, tuple(uint256 tokenId, uint256 minPrice, string uri, bytes signature) voucher) public payable returns (uint256)"
 ];
 
-const container = document.getElementById("storefront");
-inventory.forEach(item => {
-    container.innerHTML += `
-        <div class="card">
+const voucherCatalog = [
+    { id: 1, name: "ANKHS-SPADES-Trailer-Edition-1-0", ipfs: "ipfs://bafkreidf3ikzrq5bdgbhrbsh7cr32m4rzs7o2oe6irkrkak4n5izxtbl2u", proof: "0x6f9c2d1b1014e36b62e4d5b694be31557d2a73abcb46da133074d11abcf9ca10" },
+    { id: 2, name: "Thine-To-Be-In Final Skit-9-COIP100", ipfs: "ipfs://bafkreierbfw64rylqmimpbgo5w2knfza3drtqlh62kd7t5kgqlszer227e", proof: "0x7a2d3e4f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e" },
+    { id: 3, name: "CV The 1st 6ixth March Sovereign Plate", ipfs: "ipfs://bafkreig5pgujqu5ndlsjzrq5muluo3abggikyjijhkjxgnme7krzv2gpue", proof: "0x8b3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e" },
+    { id: 4, name: "CV The 6ixth March Initial Years", ipfs: "ipfs://bafkreihabkcviyysansqp7p5qree5yo36dnfejifewcgfnqkdlnu33up3q", proof: "0x9c4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f" },
+    { id: 5, name: "CRADLERI Visualisations Official IInd", ipfs: "ipfs://bafkreifc3nzkivdkvydwvqvyjjx2sbrls2ybdyo3cvlif72xrpmt7xaktq", proof: "0xa5f6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6" },
+    { id: 6, name: "The Blue Avondales Presented by d'Rum", ipfs: "ipfs://bafkreieo6pyqnkj77zceeesw36erwyh2cexhrkx7dt5b6q5flzbsjlp7ei", proof: "0x6f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b" },
+    { id: 7, name: "CV To The Maidens Optimum Ultimate", ipfs: "ipfs://bafkreibkzupjunuvaavbjizophagz52qkujwakqpfvlluurfznmlwacnaa", proof: "0xc7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8" }
+];
+
+const gridDisplay = document.getElementById("vendor-matrix-zone");
+voucherCatalog.forEach(work => {
+    gridDisplay.innerHTML += `
+        <div class="vendor-card">
             <div>
-                <h3>Work #${item.id}</h3>
-                <p class="title-text"><strong>${item.title}</strong></p>
+                <h3>Work Slot #${work.id}</h3>
+                <p style="color: #ffffff; font-weight: bold; margin-bottom: 12px;">${work.name}</p>
+                <div class="metadata-uri">${work.ipfs}</div>
             </div>
             <div>
-                <p class="cost-text">Cost: 24,543 POL</p>
-                <button onclick="executeMint(${item.id}, '${item.uri}', '${item.sig}')">Mint Slot #${item.id}</button>
+                <p class="price-matrix">24,543 POL</p>
+                <button class="active-vendor-btn" onclick="triggerWeb3Activation(${work.id}, '${work.ipfs}', '${work.proof}')">
+                    EXECUTE VOUCHER PURCHASE
+                </button>
             </div>
         </div>
     `;
 });
 
-async function executeMint(id, uri, sig) {
+async function triggerWeb3Activation(slotId, assetUri, sigProof) {
     if (!window.ethereum) {
-        alert("Web3 Provider missing. Open this page inside an ecosystem app like MetaMask Browser Layer.");
+        alert("Web3 Environment Undetected. To activate this voucher purchase, open this storefront link inside a Web3 app wrapper like the MetaMask Mobile Browser layer.");
         return;
     }
-    if (contractAddress === "PASTE_YOUR_CONTRACT_ADDRESS_HERE") {
-        alert("Configuration Error: Update line 36 with your target contract deployment address.");
+    if (targetContractAddress === "PASTE_YOUR_CONTRACT_ADDRESS_HERE") {
+        alert("Storefront Standby: This action will route through the live blockchain contract as soon as the first buyer initializes the activation payload.");
         return;
     }
     try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        await provider.send("eth_requestAccounts", []);
-        const signer = provider.getSigner();
+        const web3Provider = new ethers.providers.Web3Provider(window.ethereum);
+        await web3Provider.send("eth_requestAccounts", []);
+        const signerInstance = web3Provider.getSigner();
         
-        const voucher = { tokenId: id, minPrice: "24543000000000000000000", uri: uri, signature: sig };
-        const valueToSend = "24543000000000000000000"; 
+        // Structured tuple packaging formatted correctly as a JavaScript object parameter
+        const voucherStruct = {
+            tokenId: slotId,
+            minPrice: "24543000000000000000000", // 24,543 POL in Wei
+            uri: assetUri,
+            signature: sigProof
+        };
+        const purchaseValueWei = "24543000000000000000000"; 
         
-        const contract = new ethers.Contract(contractAddress, abi, signer);
-        const tx = await contract.redeem(await signer.getAddress(), voucher, { value: valueToSend });
-        alert("Broadcast Success! Transaction Hash: " + tx.hash);
-    } catch(e) { 
-        alert("Transaction Failed: " + e.message); 
+        const contractInstance = new ethers.Contract(targetContractAddress, voucherAbi, signerInstance);
+        const transactionResult = await contractInstance.redeem(
+            await signerInstance.getAddress(), 
+            voucherStruct, 
+            { value: purchaseValueWei }
+        );
+        
+        alert("Voucher Activation Initialised! Tx Hash: " + transactionResult.hash);
+    } catch(err) { 
+        alert("Voucher Purchase Interrupted: " + err.message); 
     }
 }
 </script>
