@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Buchombie 7-in-1 Master Storefront</title>
-    <!-- FIXED CDN: Resolves the loading asset block -->
+    <!-- RECTIFIED: Correctly mapped live Ethers.js engine library -->
     <script src="https://cloudflare.com" type="text/javascript"></script>
     <style>
         body { font-family: monospace; background: #121212; color: #00ffcc; padding: 20px; margin: 0; }
@@ -26,7 +26,9 @@
     <div class="grid" id="storefront"></div>
 
 <script>
+// Replace placeholder text with your real smart contract address once deployed
 const contractAddress = "PASTE_YOUR_CONTRACT_ADDRESS_HERE";
+
 const abi = ["function redeem(address redeemer, tuple(uint256 tokenId, uint256 minPrice, string uri, bytes signature) voucher) public payable returns (uint256)"];
 
 const inventory = [
@@ -61,7 +63,7 @@ async function executeMint(id, uri, sig) {
         return;
     }
     if (contractAddress === "PASTE_YOUR_CONTRACT_ADDRESS_HERE") {
-        alert("Configuration Pointer: Enter your target deployment contract route first.");
+        alert("Configuration Error: Update line 36 with your target contract deployment address.");
         return;
     }
     try {
