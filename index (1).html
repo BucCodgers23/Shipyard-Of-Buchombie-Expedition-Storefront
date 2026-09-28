@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acode Storefront Simulation Sandbox</title>
+    <style>
+        :root {
+            --bg: #15191d;
+            --surface: #1e242a;
+            --accent: #00ffcc;
+            --text-main: #abb2bf;
+            --text-bright: #ffffff;
+            --border: #2d3741;
+            --terminal: #111518;
+        }
+        body { 
+            font-family: 'Courier New', Courier, monospace; 
+            background: var(--bg); 
+            color: var(--text-main); 
+            padding: 12px; 
+            margin: 0; 
+            font-size: 12px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            body { grid-template-columns: 1fr 320px; }
+        }
+        .window {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--surface);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .header {
+            background: #111518;
+            padding: 6px 10px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            color: #5c6370;
+        }
+        .vendor-box { 
+            padding: 10px; 
+            background: #1a1f25;
+            border-bottom: 1px solid var(--border);
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .row { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid #1a1f25; 
+            padding: 10px; 
+            gap: 12px; 
+        }
+        .row:last-child { border-bottom: none; }
+        .title-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .title { color: var(--text-bright); font-weight: bold; }
+        .price-tag { color: #e5c07b; font-size: 10px; }
+        button { 
+            background: transparent; 
+            color: var(--accent); 
+            border: 1px solid var(--accent); 
+            padding: 6px 12px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            border-radius: 3px; 
+            font-family: monospace; 
+            font-size: 11px; 
+            white-space: nowrap; 
+        }
+        button:hover { 
+            background: var(--accent); 
+            color: var(--bg);
+        }
+        .status-pill {
+            font-size: 10px;
+            padding: 2px 6px;
+            background: #282c34;
+            border-radius: 3px;
+        }
+        .console-log {
+            background: var(--terminal);
+            color: #98c379;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            font-size: 11px;
+            white-space: pre-wrap;
+        }
+        .info-pane {
+            padding: 10px;
+            font-size: 11px;
+            border-bottom: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Front End Storefront -->
+    <div class="window">
+        <div class="header">
+            <span>[ SIMULATION ENVIRONMENT ] Storefront.io</span>
+            <span>VOUCHER MODE</span>
+        </div>
+
+        <div class="vendor-box">
+            <span id="vStatus" class="status-pill" style="color: #e06c75;">SYS: SIMULATOR_OFFLINE</span>
+            <button id="vBtn" onclick="simConnectVendor()">INIT_SIM_LINK</button>
+        </div>
+
+        <div id="list"></div>
+    </div>
+
+    <!-- Side Terminal for Blockchain Transaction Ingestion Logs -->
+    <div class="window">
+        <div class="header">
+            <span>Virtual EVM Blockchain Node Log</span>
+        </div>
+        <div class="info-pane">
+            <div><strong>Mock Wallet Balance:</strong> <span id="mockBal" style="color:#ffff00">0.00</span> POL</div>
+            <div style="margin-top: 4px;"><strong>Mock Owner Vault:</strong> <span id="vaultBal" style="color:#00ffcc">0.00</span> POL</div>
+        </div>
+        <div class="console-log" id="terminalLog">> Initialised isolated environment local client backend...&#10;> Click INIT_SIM_LINK to simulate web3 handshake.</div>
+    </div>
+
+<script>
+// Mock Local Chain State Variable Pools
+let simWalletConnected = false;
+let simUserBalance = 100000.00; // Gives user 100,000 simulated POL to trade with
+let simVaultBalance = 0.00;
+const mintPricePOL = 24543;
+
+const inventory = [
+    { id: 1, title: "ANKHS-SPADES-Trailer-Edition-1-0", uri: "ipfs://bafkreidf3ikzrq5bdgbhrbsh7cr32m4rzs7o2oe6irkrkak4n5izxtbl2u", sig: "0x6f9c2d1b1014e36b62e4d5b694be31557d2a73abcb46da133074d11abcf9ca10" },
+    { id: 2, title: "Thine-To-Be-In Final Skit-9-COIP100", uri: "ipfs://bafkreierbfw64rylqmimpbgo5w2knfza3drtqlh62kd7t5kgqlszer227e", sig: "0x7a2d3e4f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e" },
+    { id: 3, title: "CV The 1st 6ixth March Sovereign Plate", uri: "ipfs://bafkreig5pgujqu5ndlsjzrq5muluo3abggikyjijhkjxgnme7krzv2gpue", sig: "0x8b3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e" },
+    { id: 4, title: "CV The 6ixth March Initial Years", uri: "ipfs://bafkreihabkcviyysansqp7p5qree5yo36dnfejifewcgfnqkdlnu33up3q", sig: "0x9c4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f" },
+    { id: 5, title: "CRADLERI Visualisations Official IInd", uri: "ipfs://bafkreifc3nzkivdkvydwvqvyjjx2sbrls2ybdyo3cvlif72xrpmt7xaktq", sig: "0xa5f6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6" },
+    { id: 6, title: "The Blue Avondales Presented by d'Rum", uri: "ipfs://bafkreieo6pyqnkj77zceeesw36erwyh2cexhrkx7dt5b6q5flzbsjlp7ei", sig: "0x6f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b" },
+    { id: 7, title: "CV To The Maidens Optimum Ultimate", uri: "ipfs://bafkreibkzupjunuvaavbjizophagz52qkujwakqpfvlluurfznmlwacnaa", sig: "0xc7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8" }
+];
+
+// Structural UI Assembly Matrix
+const list = document.getElementById("list");
+inventory.forEach(item => {
+    list.innerHTML += `
+        <div class="row">
+            <div class="title-block">
+                <span class="title">#${item.id} ${item.title}</span>
+                <span class="price-tag">24,543 POL</span>
+            </div>
+            <button onclick="simMint(${item.id})">SIM_MINT</button>
+        </div>
+    `;
+});
+
+function logToTerminal(message) {
+    const term = document.getElementById("terminalLog");
+    term.innerHTML += `\n> ${message}`;
+    term.scrollTop = term.scrollHeight;
+}
+
+function updateBalances() {
+    document.getElementById("mockBal").innerText = simUserBalance.toLocaleString();
+    document.getElementById("vaultBal").innerText = simVaultBalance.toLocaleString();
+}
+
+// Simulated Operations Layout Actions
+function simConnectVendor() {
+    simWalletConnected = true;
+    const mockAddr = "0X71C...89E";
+    const statusEl = document.getElementById("vStatus");
+    statusEl.innerText = "SIM_LINKED: " + mockAddr;
+    statusEl.style.color = "#00ffcc";
+    document.getElementById("vBtn").innerText = "CONNECTED";
+    
+    updateBalances();
+    logToTerminal("Handshake Success. Wallet 0x71C27B89E attached with 100k test POL.");
+}
+
+function simMint(id) {
+    if (!simWalletConnected) {
+        alert("Simulation Error: You must connect the simulator provider first using the INIT_SIM_LINK button.");
+        logToTerminal("CRITICAL: Mint attempt blocked. Reason: Wallet Connection missing.");
+        return;
+    }
+    
+    if (simUserBalance < mintPricePOL) {
+        alert("Simulation Error: Insufficient simulated funds remaining.");
+        logToTerminal("CRITICAL: Execution failed due to missing funds.");
+        return;
+    }
+
+    const activeItem = inventory.find(item => item.id === id);
+    
+    logToTerminal(`Initiating isolated signature verification for Slot #${id}...`);
+    logToTerminal(`Constructing Voucher Tuple Struct data bundle...`);
+    logToTerminal(`Passing Digest Data: [ID: ${activeItem.id}, URI: ${activeItem.uri}]`);
+    logToTerminal(`Evaluating Cryptographic ECDSA Proof: ${activeItem.sig.substring(0, 16)}...`);
+    
+    // Simulate smart contract state transition checks
+    setTimeout(() => {
+        simUserBalance -= mintPricePOL;
+        simVaultBalance += mintPricePOL;
+        updateBalances();
+        
+        logToTerminal(`[SUCCESS] Voucher signature verified by local VM contract memory layer!`);
+        logToTerminal(`[MINTED] ERC721 Token ID #${id} minted to wallet address.`);
+        logToTerminal(`[ROUTING] 24,543 POL safely routed to vendor vault signer.`);
+        logToTerminal(`Tx Hash generated: 0x${Math.random().toString(16).substring(2,10)}e94a8...`);
+        alert(`Success! Simulated Work #${id} redeemed independently.`);
+    }, 400);
+}
+</script>
+</body>
+</html>
