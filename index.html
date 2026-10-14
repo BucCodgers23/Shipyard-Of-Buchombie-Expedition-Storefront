@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUCHOMBIE 7-IN-1 ACTIVE VENDOR MATRIX</title>
-    <!-- Core Production Web3 Engine Dependency -->
+    <!-- FIXED LINE 8: Secure Production Web3 Library Core Engine Integration -->
     <script src="https://cloudflare.com" type="text/javascript"></script>
     <style>
         :root {
@@ -87,7 +87,6 @@
             font-weight: bold;
             margin: 15px 0 8px 0; 
         }
-        /* The Web3 Active Vendor Button Style */
         .active-vendor-btn { 
             background: var(--neon-cyan); 
             color: #0f1115; 
@@ -129,13 +128,13 @@ const voucherAbi = [
 ];
 
 const voucherCatalog = [
-    { id: 1, name: "ANKHS-SPADES-Trailer-Edition-1-0", ipfs: "ipfs://bafkreidf3ikzrq5bdgbhrbsh7cr32m4rzs7o2oe6irkrkak4n5izxtbl2u", proof: "0x6f9c2d1b1014e36b62e4d5b694be31557d2a73abcb46da133074d11abcf9ca10", videoUrl: "https://youtu.be" },
-    { id: 2, name: "Thine-To-Be-In Final Skit-9-COIP100", ipfs: "ipfs://bafkreierbfw64rylqmimpbgo5w2knfza3drtqlh62kd7t5kgqlszer227e", proof: "0x7a2d3e4f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e", videoUrl: "" },
-    { id: 3, name: "CV The 1st 6ixth March Sovereign Plate", ipfs: "ipfs://bafkreig5pgujqu5ndlsjzrq5muluo3abggikyjijhkjxgnme7krzv2gpue", proof: "0x8b3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e", videoUrl: "" },
-    { id: 4, name: "CV The 6ixth March Initial Years", ipfs: "ipfs://bafkreihabkcviyysansqp7p5qree5yo36dnfejifewcgfnqkdlnu33up3q", proof: "0x9c4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f", videoUrl: "" },
-    { id: 5, name: "CRADLERI Visualisations Official IInd", ipfs: "ipfs://bafkreifc3nzkivdkvydwvqvyjjx2sbrls2ybdyo3cvlif72xrpmt7xaktq", proof: "0xa5f6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6", videoUrl: "" },
-    { id: 6, name: "The Blue Avondales Presented by d'Rum", ipfs: "ipfs://bafkreieo6pyqnkj77zceeesw36erwyh2cexhrkx7dt5b6q5flzbsjlp7ei", proof: "0x6f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b", videoUrl: "" },
-    { id: 7, name: "CV To The Maidens Optimum Ultimate", ipfs: "ipfs://bafkreibkzupjunuvaavbjizophagz52qkujwakqpfvlluurfznmlwacnaa", proof: "0xc7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8", videoUrl: "" }
+    { id: 1, name: "ANKHS-SPADES-Trailer-Edition-1-0", ipfs: "ipfs://bafkreidf3ikzrq5bdgbhrbsh7cr32m4rzs7o2oe6irkrkak4n5izxtbl2u", proof: "0x6f9c2d1b1014e36b62e4d5b694be31557d2a73abcb46da133074d11abcf9ca10" },
+    { id: 2, name: "Thine-To-Be-In Final Skit-9-COIP100", ipfs: "ipfs://bafkreierbfw64rylqmimpbgo5w2knfza3drtqlh62kd7t5kgqlszer227e", proof: "0x7a2d3e4f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e" },
+    { id: 3, name: "CV The 1st 6ixth March Sovereign Plate", ipfs: "ipfs://bafkreig5pgujqu5ndlsjzrq5muluo3abggikyjijhkjxgnme7krzv2gpue", proof: "0x8b3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e" },
+    { id: 4, name: "CV The 6ixth March Initial Years", ipfs: "ipfs://bafkreihabkcviyysansqp7p5qree5yo36dnfejifewcgfnqkdlnu33up3q", proof: "0x9c4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f" },
+    { id: 5, name: "CRADLERI Visualisations Official IInd", ipfs: "ipfs://bafkreifc3nzkivdkvydwvqvyjjx2sbrls2ybdyo3cvlif72xrpmt7xaktq", proof: "0xa5f6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6" },
+    { id: 6, name: "The Blue Avondales Presented by d'Rum", ipfs: "ipfs://bafkreieo6pyqnkj77zceeesw36erwyh2cexhrkx7dt5b6q5flzbsjlp7ei", proof: "0x6f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b" },
+    { id: 7, name: "CV To The Maidens Optimum Ultimate", ipfs: "ipfs://bafkreibkzupjunuvaavbjizophagz52qkujwakqpfvlluurfznmlwacnaa", proof: "0xc7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8" }
 ];
 
 const gridDisplay = document.getElementById("vendor-matrix-zone");
@@ -143,30 +142,21 @@ voucherCatalog.forEach(work => {
     let badgeText = "⚓ VAULT ESCROW";
     let badgeColor = "var(--neon-cyan)";
     let badgeBg = "#112222";
-    let clickableStyle = "";
-    let clickAction = "";
 
-    if (work.id === 1) { 
-        badgeText = "🔥 TRAILER SPECIAL"; 
-        badgeColor = "var(--hot-pink)"; 
-        badgeBg = "#2c141d"; 
-    } else if (work.id === 7) { 
-        badgeText = "👑 OPTIMUM CORE"; 
-        badgeColor = "var(--gold-cost)"; 
-        badgeBg = "#2a2215"; 
-    }
-
-    // Dynamic Video Preview Linking Modification
-    if (work.videoUrl && work.videoUrl.trim() !== "") {
-        badgeText += " ➔ [PREVIEW]";
-        clickableStyle = "cursor: pointer; text-shadow: 0 0 5px " + badgeColor + ";";
-        clickAction = `onclick="window.open('${work.videoUrl}', '_blank')"`;
+    if (work.id === 1) {
+        badgeText = "🔥 TRAILER SPECIAL";
+        badgeColor = "var(--hot-pink)";
+        badgeBg = "#2c141d";
+    } else if (work.id === 7) {
+        badgeText = "👑 OPTIMUM CORE";
+        badgeColor = "var(--gold-cost)";
+        badgeBg = "#2a2215";
     }
 
     gridDisplay.innerHTML += `
         <div class="vendor-card">
             <div>
-                <div ${clickAction} style="display: inline-block; padding: 5px 10px; background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeColor}; font-size: 10px; font-weight: bold; margin-bottom: 12px; border-radius: 3px; ${clickableStyle}">
+                <div style="display: inline-block; padding: 4px 8px; background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeColor}; font-size: 10px; font-weight: bold; letter-spacing: 1px; margin-bottom: 12px; border-radius: 3px;">
                     ${badgeText}
                 </div>
                 <h3>Work Slot #${work.id}</h3>
@@ -220,9 +210,14 @@ async function triggerWeb3Activation(slotId, assetUri, sigProof) {
 </script>
 
 <!-- ========================================================================= -->
-<!-- ORIGINAL COMPONENT RE-APPLIED: SHIPYARD VOUCHER VERIFICATION INTERFACE    -->
+<!-- VERIFICATION FACILITY INTERFACE COMPONENT                                 -->
 <!-- ========================================================================= -->
 <hr style="border: 0; border-top: 2px dashed #262e3d; margin: 60px auto 40px auto; max-width: 1200px;">
 
 <div class="buchombie-verifier-container" style="max-width: 1200px; margin: 0 auto 50px auto; padding: 0 10px;">
     <div style="background: #161a22; border: 2px solid #00ffcc; border-radius: 6px; padding: 25px; box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);">
+        <h3 style="color: #fff; border-bottom: 1px solid #262e3d; padding-bottom: 10px; margin-top:0; font-size: 1.2rem;">⚓ SHIPYARD EXPEDITION VOUCHER VERIFIER FACILITY</h3>
+        <p style="font-size: 0.9em; color: #8a99ad; margin-bottom: 20px; line-height: 1.5;">Verify that your Expedition Voucher corresponds to a minted asset resting securely within the Buchombie Polygon Escrow.</p>
+        
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; margin-bottom: 8px; font-weight:bold; color: #ffffff;">Expedition Voucher Key:</label>
