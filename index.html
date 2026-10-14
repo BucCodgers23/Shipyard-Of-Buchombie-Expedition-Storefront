@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUCHOMBIE 7-IN-1 ACTIVE VENDOR MATRIX</title>
-    <!-- FIXED LINE 8: Production Web3 Library Core Engine -->
     <script src="https://cloudflare.com" type="text/javascript"></script>
     <style>
         :root {
@@ -15,150 +14,55 @@
             --gold-cost: #f5c068;
             --hot-pink: #ff3366;
         }
-        body { 
-            font-family: 'Courier New', Courier, monospace; 
-            background: var(--deep-bg); 
-            color: var(--neon-cyan); 
-            padding: 20px; 
-            margin: 0; 
-            font-size: 13px;
-        }
-        .matrix-title { 
-            text-align: center; 
-            border-bottom: 2px solid var(--neon-cyan); 
-            padding-bottom: 18px; 
-            letter-spacing: 2px; 
-            font-size: 1.4rem;
-            color: #ffffff;
-            text-shadow: 0 0 8px var(--neon-cyan);
-        }
-        .global-alert { 
-            text-align: center; 
-            font-size: 0.85rem; 
-            color: var(--hot-pink); 
-            margin: 20px auto 30px auto; 
-            background: #22141a; 
-            padding: 10px; 
-            border: 1px dashed var(--hot-pink); 
-            border-radius: 4px; 
-            max-width: 600px;
-        }
-        .showcase-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 25px; 
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .vendor-card { 
-            border: 1px solid var(--neon-cyan); 
-            padding: 22px; 
-            border-radius: 6px; 
-            background: var(--panel-bg); 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            box-shadow: 0 5px 15px rgba(0, 255, 204, 0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .vendor-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 255, 204, 0.15);
-        }
-        .vendor-card h3 { 
-            margin: 0 0 10px 0; 
-            border-bottom: 1px solid var(--border-dim); 
-            padding-bottom: 8px; 
-            color: #ffffff; 
-            font-size: 1.1rem;
-        }
-        .metadata-uri { 
-            word-break: break-all; 
-            color: #8a99ad; 
-            font-size: 11px;
-            background: #0f1217;
-            padding: 6px;
-            border-radius: 3px;
-            border: 1px solid #1c232f;
-        }
-        .price-matrix { 
-            font-size: 1.2rem; 
-            color: var(--gold-cost); 
-            font-weight: bold;
-            margin: 15px 0 8px 0; 
-        }
-        /* The Web3 Active Vendor Button Style */
-        .active-vendor-btn { 
-            background: var(--neon-cyan); 
-            color: #0f1115; 
-            border: 1px solid var(--neon-cyan); 
-            padding: 14px 20px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            width: 100%; 
-            margin-top: 12px; 
-            border-radius: 4px; 
-            font-family: 'Courier New', Courier, monospace; 
-            font-size: 12px;
-            letter-spacing: 1px;
-            transition: all 0.2s ease;
-        }
-        .active-vendor-btn:hover { 
-            background: #ffffff; 
-            border-color: #ffffff;
-            box-shadow: 0 0 15px var(--neon-cyan); 
-        }
+        body { font-family: 'Courier New', Courier, monospace; background: var(--deep-bg); color: var(--neon-cyan); padding: 20px; margin: 0; font-size: 13px; }
+        .matrix-title { text-align: center; border-bottom: 2px solid var(--neon-cyan); padding-bottom: 18px; letter-spacing: 2px; font-size: 1.4rem; color: #ffffff; text-shadow: 0 0 8px var(--neon-cyan); }
+        .global-alert { text-align: center; font-size: 0.85rem; color: var(--hot-pink); margin: 20px auto 30px auto; background: #22141a; padding: 10px; border: 1px dashed var(--hot-pink); border-radius: 4px; max-width: 600px; }
+        .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .vendor-card { border: 1px solid var(--neon-cyan); padding: 22px; border-radius: 6px; background: var(--panel-bg); display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 5px 15px rgba(0, 255, 204, 0.08); }
+        .metadata-uri { word-break: break-all; color: #8a99ad; font-size: 11px; background: #0f1217; padding: 6px; border-radius: 3px; border: 1px solid #1c232f; }
+        .price-matrix { font-size: 1.2rem; color: var(--gold-cost); font-weight: bold; margin: 15px 0 8px 0; }
+        .active-vendor-btn { background: var(--neon-cyan); color: #0f1115; border: 1px solid var(--neon-cyan); padding: 14px 20px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 12px; border-radius: 4px; font-family: 'Courier New', Courier, monospace; font-size: 12px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-
     <h1 class="matrix-title">BUCHOMBIE INTER-DIMENSIONAL ELEMENTAL INITIATE 7 ETERNAL</h1>
-    
-    <div class="global-alert">
-        ⚡ WEB3 VENDOR MODULE ACTIVE: Activation triggers Polygon Mainnet mint execution automatically via voucher claims.
-    </div>
-
+    <div class="global-alert">⚡ WEB3 VENDOR MODULE ACTIVE: Activation triggers Polygon Mainnet mint execution automatically via voucher claims.</div>
     <div class="showcase-grid" id="vendor-matrix-zone"></div>
 
 <script>
-// Replace this placeholder string with your target deployed smart contract address
 const targetContractAddress = "PASTE_YOUR_CONTRACT_ADDRESS_HERE";
-
-const voucherAbi = [
-    "function redeem(address redeemer, tuple(uint256 tokenId, uint256 minPrice, string uri, bytes signature) voucher) public payable returns (uint256)"
-];
-
+const voucherAbi = ["function redeem(address redeemer, tuple(uint256 tokenId, uint256 minPrice, string uri, bytes signature) voucher) public payable returns (uint256)"];
 const voucherCatalog = [
-    { id: 1, name: "ANKHS-SPADES-Trailer-Edition-1-0", ipfs: "ipfs://bafkreidf3ikzrq5bdgbhrbsh7cr32m4rzs7o2oe6irkrkak4n5izxtbl2u", proof: "0x6f9c2d1b1014e36b62e4d5b694be31557d2a73abcb46da133074d11abcf9ca10" },
-    { id: 2, name: "Thine-To-Be-In Final Skit-9-COIP100", ipfs: "ipfs://bafkreierbfw64rylqmimpbgo5w2knfza3drtqlh62kd7t5kgqlszer227e", proof: "0x7a2d3e4f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e" },
-    { id: 3, name: "CV The 1st 6ixth March Sovereign Plate", ipfs: "ipfs://bafkreig5pgujqu5ndlsjzrq5muluo3abggikyjijhkjxgnme7krzv2gpue", proof: "0x8b3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e" },
-    { id: 4, name: "CV The 6ixth March Initial Years", ipfs: "ipfs://bafkreihabkcviyysansqp7p5qree5yo36dnfejifewcgfnqkdlnu33up3q", proof: "0x9c4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f" },
-    { id: 5, name: "CRADLERI Visualisations Official IInd", ipfs: "ipfs://bafkreifc3nzkivdkvydwvqvyjjx2sbrls2ybdyo3cvlif72xrpmt7xaktq", proof: "0xa5f6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6" },
-    { id: 6, name: "The Blue Avondales Presented by d'Rum", ipfs: "ipfs://bafkreieo6pyqnkj77zceeesw36erwyh2cexhrkx7dt5b6q5flzbsjlp7ei", proof: "0x6f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b" },
-    { id: 7, name: "CV To The Maidens Optimum Ultimate", ipfs: "ipfs://bafkreibkzupjunuvaavbjizophagz52qkujwakqpfvlluurfznmlwacnaa", proof: "0xc7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8" }
+    { id: 1, name: "ANKHS-SPADES-Trailer-Edition-1-0", ipfs: "ipfs://bafkreidf3ikzrq5bdgbhrbsh7cr32m4rzs7o2oe6irkrkak4n5izxtbl2u", proof: "0x6f9c2d1b1014e36b62e4d5b694be31557d2a73abcb46da133074d11abcf9ca10", videoUrl: "https://youtube.com" },
+    { id: 2, name: "Thine-To-Be-In Final Skit-9-COIP100", ipfs: "ipfs://bafkreierbfw64rylqmimpbgo5w2knfza3drtqlh62kd7t5kgqlszer227e", proof: "0x7a2d3e4f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e", videoUrl: "" },
+    { id: 3, name: "CV The 1st 6ixth March Sovereign Plate", ipfs: "ipfs://bafkreig5pgujqu5ndlsjzrq5muluo3abggikyjijhkjxgnme7krzv2gpue", proof: "0x8b3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e", videoUrl: "" },
+    { id: 4, name: "CV The 6ixth March Initial Years", ipfs: "ipfs://bafkreihabkcviyysansqp7p5qree5yo36dnfejifewcgfnqkdlnu33up3q", proof: "0x9c4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f", videoUrl: "" },
+    { id: 5, name: "CRADLERI Visualisations Official IInd", ipfs: "ipfs://bafkreifc3nzkivdkvydwvqvyjjx2sbrls2ybdyo3cvlif72xrpmt7xaktq", proof: "0xa5f6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6", videoUrl: "" },
+    { id: 6, name: "The Blue Avondales Presented by d'Rum", ipfs: "ipfs://bafkreieo6pyqnkj77zceeesw36erwyh2cexhrkx7dt5b6q5flzbsjlp7ei", proof: "0x6f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b", videoUrl: "" },
+    { id: 7, name: "CV To The Maidens Optimum Ultimate", ipfs: "ipfs://bafkreibkzupjunuvaavbjizophagz52qkujwakqpfvlluurfznmlwacnaa", proof: "0xc7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8", videoUrl: "" }
 ];
 
 const gridDisplay = document.getElementById("vendor-matrix-zone");
 voucherCatalog.forEach(work => {
-    // Custom Badge Configuration Variables
     let badgeText = "⚓ VAULT ESCROW";
     let badgeColor = "var(--neon-cyan)";
     let badgeBg = "#112222";
+    let clickableStyle = "";
+    let clickAction = "";
 
-    if (work.id === 1) {
-        badgeText = "🔥 TRAILER SPECIAL";
-        badgeColor = "var(--hot-pink)";
-        badgeBg = "#2c141d";
-    } else if (work.id === 7) {
-        badgeText = "👑 OPTIMUM CORE";
-        badgeColor = "var(--gold-cost)";
-        badgeBg = "#2a2215";
+    if (work.id === 1) { badgeText = "🔥 TRAILER SPECIAL"; badgeColor = "var(--hot-pink)"; badgeBg = "#2c141d"; }
+    else if (work.id === 7) { badgeText = "👑 OPTIMUM CORE"; badgeColor = "var(--gold-cost)"; badgeBg = "#2a2215"; }
+
+    if (work.videoUrl && work.videoUrl.trim() !== "") {
+        badgeText += " ➔ [PREVIEW]";
+        clickableStyle = "cursor: pointer;";
+        clickAction = `onclick="window.open('${work.videoUrl}', '_blank')"`;
     }
 
     gridDisplay.innerHTML += `
         <div class="vendor-card">
             <div>
-                <div style="display: inline-block; padding: 4px 8px; background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeColor}; font-size: 10px; font-weight: bold; letter-spacing: 1px; margin-bottom: 12px; border-radius: 3px;">
+                <div ${clickAction} style="display: inline-block; padding: 5px 10px; background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeColor}; font-size: 10px; font-weight: bold; margin-bottom: 12px; border-radius: 3px; ${clickableStyle}">
                     ${badgeText}
                 </div>
                 <h3>Work Slot #${work.id}</h3>
@@ -167,58 +71,23 @@ voucherCatalog.forEach(work => {
             </div>
             <div>
                 <p class="price-matrix">24,543 POL</p>
-                <button class="active-vendor-btn" onclick="triggerWeb3Activation(${work.id}, '${work.ipfs}', '${work.proof}')">
-                    EXECUTE VOUCHER PURCHASE
-                </button>
+                <button class="active-vendor-btn" onclick="triggerWeb3Activation(${work.id}, '${work.ipfs}', '${work.proof}')">EXECUTE VOUCHER PURCHASE</button>
             </div>
         </div>
     `;
 });
 
 async function triggerWeb3Activation(slotId, assetUri, sigProof) {
-    if (!window.ethereum) {
-        alert("Web3 Environment Undetected. To activate this voucher purchase, open this storefront link inside a Web3 app wrapper like the MetaMask Mobile Browser layer.");
-        return;
-    }
-    if (targetContractAddress === "PASTE_YOUR_CONTRACT_ADDRESS_HERE") {
-        alert("Storefront Standby: This action will route through the live blockchain contract as soon as the first buyer initializes the activation payload.");
-        return;
-    }
+    if (!window.ethereum) { alert("Web3 Environment Undetected."); return; }
     try {
         const web3Provider = new ethers.providers.Web3Provider(window.ethereum);
         await web3Provider.send("eth_requestAccounts", []);
         const signerInstance = web3Provider.getSigner();
-        
-        const voucherStruct = {
-            tokenId: slotId,
-            minPrice: "24543000000000000000000", 
-            uri: assetUri,
-            signature: sigProof
-        };
-        const purchaseValueWei = "24543000000000000000000"; 
-        
         const contractInstance = new ethers.Contract(targetContractAddress, voucherAbi, signerInstance);
-        const transactionResult = await contractInstance.redeem(
-            await signerInstance.getAddress(), 
-            voucherStruct, 
-            { value: purchaseValueWei }
-        );
-        
-        alert("Voucher Activation Initialised! Tx Hash: " + transactionResult.hash);
-    } catch(err) { 
-        alert("Voucher Purchase Interrupted: " + err.message); 
-    }
+        const tx = await contractInstance.redeem(await signerInstance.getAddress(), { tokenId: slotId, minPrice: "24543000000000000000000", uri: assetUri, signature: sigProof }, { value: "24543000000000000000000" });
+        alert("Initialised! Tx Hash: " + tx.hash);
+    } catch(err) { alert("Interrupted: " + err.message); }
 }
 </script>
-
-<!-- ========================================================================= -->
-<!-- ORIGINAL COMPONENT RE-APPLIED: SHIPYARD VOUCHER VERIFICATION INTERFACE    -->
-<!-- ========================================================================= -->
-<hr style="border: 0; border-top: 2px dashed #262e3d; margin: 50px auto 40px auto; max-width: 1200px;">
-
-<div class="buchombie-verifier-container" style="max-width: 1200px; margin: 0 auto 50px auto; padding: 0 10px;">
-    <div style="background: #161a22; border: 2px solid #00ffcc; border-radius: 6px; padding: 25px; box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);">
-        <h3 style="color: #fff; border-bottom: 1px solid #262e3d; padding-bottom: 10px; margin-top:0; font-size: 1.2rem;">⚓ SHIPYARD VAULT VERIFICATION</h3>
-        <p style="font-size: 0.9em; color: #8a99ad; margin-bottom: 20px; line-height: 1.5;">Verify that your Expedition Voucher corresponds to a minted asset resting securely within the Buchombie Polygon Escrow.</p>
-        
-        <div style="margin-bottom: 15px;">
+</body>
+</html>
